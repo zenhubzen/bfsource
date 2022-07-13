@@ -33,7 +33,7 @@ end)
         MODILEMAGE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         MODILEMAGE.BackgroundTransparency = 1.000
         MODILEMAGE.BorderSizePixel = 0
-        MODILEMAGE.Position = UDim2.new(0, 0.5, 0, 0.5)
+        MODILEMAGE.Position = UDim2.new(0, 0.5, 0, 0.9)
         MODILEMAGE.Size = UDim2.new(0, 38, 0, 35)
         MODILEMAGE.Image = "rbxassetid://9896553189"
 
@@ -2450,7 +2450,7 @@ end
                             bill.Adornee = v
                             bill.AlwaysOnTop = true
                             local name = Instance.new('TextLabel',bill)
-                            name.Font = "CodeBold"
+                            name.Font = "GothamBold"
                             name.FontSize = "Size14"
                             name.TextWrapped = true
                             name.Size = UDim2.new(1,0,1,0)
@@ -2485,7 +2485,7 @@ end
                                 bill.Adornee = v
                                 bill.AlwaysOnTop = true
                                 local name = Instance.new('TextLabel',bill)
-                                name.Font = "CodeBold"
+                                name.Font = "GothamBold"
                                 name.FontSize = "Size14"
                                 name.TextWrapped = true
                                 name.Size = UDim2.new(1,0,1,0)
@@ -2529,7 +2529,7 @@ end
                             bill.Adornee = v.Handle
                             bill.AlwaysOnTop = true
                             local name = Instance.new('TextLabel',bill)
-                            name.Font = "CodeBold"
+                            name.Font = "GothamBold"
                             name.FontSize = "Size14"
                             name.TextWrapped = true
                             name.Size = UDim2.new(1,0,1,0)
@@ -2564,7 +2564,7 @@ end
                             bill.Adornee = v
                             bill.AlwaysOnTop = true
                             local name = Instance.new('TextLabel',bill)
-                            name.Font = "CodeBold"
+                            name.Font = "GothamBold"
                             name.FontSize = "Size14"
                             name.TextWrapped = true
                             name.Size = UDim2.new(1,0,1,0)
@@ -2574,7 +2574,7 @@ end
                             name.TextColor3 = Color3.fromRGB(255, 0, 0)
                         if v.Name == "Flower1" then 
                             name.Text = ("Blue Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-                            name.TextColor3 = Color3.fromRGB(0, 0, 255)
+                            name.TextColor3 = Color3.fromRGB(255, 0, 0)
                         end
                         if v.Name == "Flower2" then
                             name.Text = ("Red Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
@@ -5669,6 +5669,46 @@ Main:Seperator("Mastery Skill")
         StopTween(_G.AutoFarmBoss)
     end)
     
+  Main:Toggle("Auto Farm All Boss",_G.AutoAllBoss,function(value)
+        _G.AutoAllBoss = value
+        StopTween(_G.AutoAllBoss)
+    end)
+    
+    Main:Toggle("Auto Farm All Boss Hop",_G.AutoAllBossHop,function(value)
+        _G.AutoAllBossHop = value
+    end)
+    
+    spawn(function()
+        while wait() do
+            if _G.AutoAllBoss then
+                pcall(function()
+                    for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
+                        if string.find(v.Name,"Boss") then
+                            if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 17000 then
+                                repeat task.wait()
+                                    AutoHaki()
+                                    EquipWeapon(_G.SelectWeapon)
+                                    v.Humanoid.WalkSpeed = 0
+                                    v.HumanoidRootPart.CanCollide = false
+                                    v.Head.CanCollide = false
+                                    v.HumanoidRootPart.Size = Vector3.new(80,80,80)
+                                    topos(v.HumanoidRootPart.CFrame*CFrame.new(2,20,2))
+                                    game:GetService'VirtualUser':CaptureController()
+                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                    sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                until v.Humanoid.Health <= 0 or _G.AutoAllBoss == false or not v.Parent
+                            end
+                        else
+                            if _G.AutoAllBossHop then
+                                Hop()
+                            end
+                        end
+                    end
+                end)
+            end
+        end
+    end)
+    
     spawn(function()
         while wait() do
             if _G.AutoFarmBoss then
@@ -5694,6 +5734,37 @@ Main:Seperator("Mastery Skill")
                     else
                         if game:GetService("ReplicatedStorage"):FindFirstChild(_G.SelectBoss) then
                             topos(game:GetService("ReplicatedStorage"):FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame * CFrame.new(0,30,0))
+                        end
+                    end
+                end)
+            end
+        end
+    end)
+    
+spawn(function()
+        while wait() do
+            if _G.AutoAllBoss then
+                pcall(function()
+                    for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
+                        if string.find(v.Name,"Boss") then
+                            if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 17000 then
+                                repeat task.wait()
+                                    AutoHaki()
+                                    EquipWeapon(_G.SelectWeapon)
+                                    v.Humanoid.WalkSpeed = 0
+                                    v.HumanoidRootPart.CanCollide = false
+                                    v.Head.CanCollide = false
+                                    v.HumanoidRootPart.Size = Vector3.new(80,80,80)
+                                    topos(v.HumanoidRootPart.CFrame*CFrame.new(2,20,2))
+                                    game:GetService'VirtualUser':CaptureController()
+                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                    sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                until v.Humanoid.Health <= 0 or _G.AutoAllBoss == false or not v.Parent
+                            end
+                        else
+                            if _G.AutoAllBossHop then
+                                Hop()
+                            end
                         end
                     end
                 end)
@@ -6658,7 +6729,7 @@ end)
         end
     end)
     
-    Stats:Seperator("Fake (Not Work in Arceus)")
+    Stats:Seperator("Fake")
     Stats:Label("(Not Work in Arceus)")
     
     Stats:Toggle("Enabled Fake",_G.EnabledStat,function(value)
@@ -7356,7 +7427,7 @@ Teleport:Seperator("Island")
         end
     end)
     
-    Shop:Seperator("Abilities")
+        Shop:Seperator("Abilities")
     
     Shop:Button("Buy Geppo",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Geppo")
@@ -7466,7 +7537,7 @@ Teleport:Seperator("Island")
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Soul Cane")
     end)
     
-    Shop:Seperator("Guns")
+    Shop:Seperator("Gun")
     
     Shop:Button("Slingshot",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Slingshot")
