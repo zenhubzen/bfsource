@@ -3518,7 +3518,7 @@ end)
         end
     end)
     
-Update:Notification("Hello, "  ..game.Players.LocalPlayer.DisplayName.. " Welcome To Zen Hub V4! What's new? | [+] New Color Ui [+] Improve all [+] Fix Some Bugs [+] Added New Function [+] Much More... ")
+Update:Notification("Hello, "  ..game.Players.LocalPlayer.DisplayName.. " Welcome To Zen Hub V5! What's new? | [+] Fix Can't hit Npc [+] Fix Fast Attack [+] Added Superfastattack 2 [+] Added New Function [+] Much More... ")
     
     Main:Seperator("「 Main 」")
    
