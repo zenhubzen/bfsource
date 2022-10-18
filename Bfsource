@@ -8682,24 +8682,3 @@ Misc:Button("Invisible",function()
     Misc:Toggle("NoClip",_G.NOCLIP,function(value)
         _G.NOCLIP = value
     end)
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
-local Player = game:GetService("Players").LocalPlayer
-
-local ArgsDash = {
-	Character = Player.Character,
-	Duration = .25,
-	CFrame = Player.Character.HumanoidRootPart.CFrame,
-}
-
-local old; old = hookmetamethod(game, "__namecall", newcclosure(function(self, ...)
-	if self.Name == "CommE" then
-		local args = {...}
-
-		if args[1] == "Dodge" then
-			coroutine.wrap(function() require(ReplicatedStorage.Effect.Container.Shared.LightningTP)(ArgsDash) end)()
-		end
-	end
-	
-	return old(self, ...)
-end))
