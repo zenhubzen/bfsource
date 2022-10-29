@@ -3165,64 +3165,71 @@ spawn(function()
     end)
 
 spawn(function()
-	while wait() do
-		if _G.AutoFarm then
-			if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
-				MagnetActive = false
-				CheckLevel()
-				TP(CFrameQuest)
-				if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 4 then
-					CheckLevel()
-					if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 20 then
-						wait(0.8)
-						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NameQuest, LevelQuest)
-						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
-						wait(0.8)
-					else
-						TP(CFrameQuest)
-					end
-				end
-			elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-				pcall(function()
-					CheckLevel()
-					EquipWeapon(_G.Setting_table.Weapon)
-					AutoHaki()
-					if game:GetService("Workspace").Enemies:FindFirstChild(Mon) then
-						for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-							if v.Name == Mon and v:FindFirstChild("Humanoid") then
-								if v.Humanoid.Health > 0 then
-									repeat game:GetService("RunService").Heartbeat:wait()
-										if game:GetService("Workspace").Enemies:FindFirstChild(Mon) then
-											if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
-												v.HumanoidRootPart.CanCollide = false
-												v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)--Speedff
+        while wait() do
+            if _G.AutoFarm then
+                pcall(function()
+                    local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
+                    if not string.find(QuestTitle, NameMon) then
+                        StartMagnet = false
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+                    end
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
+                        StartMagnet = false
+                        CheckQuest()
+                        repeat wait() TP(CFrameQuest) until (CFrameQuest.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoFarm
+                        if (CFrameQuest.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then
+                            wait(1.2)
+                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,LevelQuest)
+                            wait(0.5)
+                        end
+                    elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+                        CheckQuest()
+                        if game:GetService("Workspace").Enemies:FindFirstChild(Mon) then
+                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                                    if v.Name == Mon then
+                                        if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
+                                            repeat task.wait()
+                                                EquipWeapon(_G.Setting_table.Weapon)
+                                                AutoHaki()                                            
+                                                PosMon = v.HumanoidRootPart.CFrame
                                                 TP(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
-												game:GetService("VirtualUser"):CaptureController()
-												game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 670),workspace.CurrentCamera.CFrame)
-												MagnetActive = true
-												PosMon = v.HumanoidRootPart.CFrame
-											else
-												MagnetActive = false    
-												game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-											end
-										else
-											MagnetActive = false
-											cq()
-											TP(CFrameMon)
-										end
-									until not v.Parent or v.Humanoid.Health <= 0 or _G.AutoFarm == false or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
-								end
-							end
-						end
-					else
-						MagnetActive = false
-						CheckLevel()
-					end
-				end)
-			end
-		end
-	end
-end)
+                                                v.HumanoidRootPart.CanCollide = false
+                                                v.Humanoid.WalkSpeed = 0
+                                                v.Head.CanCollide = false
+                                                v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                                StartMagnet = true
+                                                game:GetService'VirtualUser':CaptureController()
+                                                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                            until not _G.AutoFarm or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
+                                        else
+                                            StartMagnet = false
+                                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+                                        end
+                                    end
+                                end
+                            end
+                        else
+                            StartMagnet = false
+                            if game:GetService("ReplicatedStorage"):FindFirstChild(Mon) then
+                                TP(game:GetService("ReplicatedStorage"):FindFirstChild(Mon).HumanoidRootPart.CFrame * CFrame.new(0,30,0))
+                            else
+                                if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 15 then
+                                    if PosMon ~= nil then
+                                        TP(PosMon * CFrame.new(0,30,0))
+                                    else
+                                        if OldPos ~= nil then
+                                            TP(OldPos.Position)
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end
+    end)
 -- Farm_Monster
 if World1 then
 tableMon = {
