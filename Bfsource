@@ -29,7 +29,7 @@ LOGO1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 LOGO1.BackgroundTransparency = 1.000
 LOGO1.Position = UDim2.new(-0.115384616, 0, -0.245283023, 0)
 LOGO1.Size = UDim2.new(0, 95, 0, 78)
-LOGO1.Image = "rbxassetid://11357867136"
+LOGO1.Image = "rbxassetid://11354741327"
 
 posto.Name = "posto"
 posto.Parent = Open
@@ -396,7 +396,7 @@ TabImage.BackgroundColor3 = _G.Color
 TabImage.BackgroundTransparency = 1.000
 TabImage.Position = UDim2.new(0, 0, 0, 0)
 TabImage.Size = UDim2.new(0, 20, 0, 20)
-TabImage.Image = img or "rbxassetid://11357867136"
+TabImage.Image = img or "rbxassetid://11354741327"
 TabImage.ImageColor3 = _G.Color
 
 local MainFramePage = Instance.new("ScrollingFrame")
@@ -743,7 +743,7 @@ ImageLabel.BackgroundTransparency = 1.000
 ImageLabel.BorderSizePixel = 0
 ImageLabel.Position = UDim2.new(-0.018, 0,-0.252, 0)
 ImageLabel.Size = UDim2.new(0, 45,0, 45)
-ImageLabel.Image = "rbxassetid://11357867136"
+ImageLabel.Image = "rbxassetid://11354741327"
 ImageLabel.ImageColor3 = Color3.fromRGB(255, 255, 255)
 
 Space.Name = "Space"
@@ -2641,7 +2641,7 @@ tween:Play()
 end
 
 --------------------------------------------------------------------
-local Library = Update:Window("Zen Hub","11357867136")
+local Library = Update:Window("Zen Hub","11354741327")
 --------------------------------------------------------------------
 local Main = Library:Tab("Main","rbxassetid://6026568198")
 local Weapon = Library:Tab("Weapons","rbxassetid://9606626034")
