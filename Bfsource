@@ -8347,7 +8347,7 @@ Teleport:Toggle("Teleport",false,function(value)
  StopTween(_G.TeleportIsland)
  end)
 
-Dungeon:Line()
+R:Line()
 
 local TimeRaid = R:Label("")
     
