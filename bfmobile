@@ -3100,6 +3100,27 @@ spawn(function()
   end)
  end
  end)
+ 
+-- Farm_Monster
+if World1 then
+tableMon = {
+ "Bandit [Lv. 5]","Monkey [Lv. 14]","Gorilla [Lv. 20]","Pirate [Lv. 35]","Brute [Lv. 45]","Desert Bandit [Lv. 60]","Desert Officer [Lv. 70]","Snow Bandit [Lv. 90]","Snowman [Lv. 100]","Chief Petty Officer [Lv. 120]","Sky Bandit [Lv. 150]","Dark Master [Lv. 175]","Prisoner [Lv. 190]", "Dangerous Prisoner [Lv. 210]","Toga Warrior [Lv. 250]","Gladiator [Lv. 275]","Military Soldier [Lv. 300]","Military Spy [Lv. 325]","Fishman Warrior [Lv. 375]","Fishman Commando [Lv. 400]","God's Guard [Lv. 450]","Shanda [Lv. 475]","Royal Squad [Lv. 525]","Royal Soldier [Lv. 550]","Galley Pirate [Lv. 625]","Galley Captain [Lv. 650]"
+} elseif World2 then
+tableMon = {
+ "Raider [Lv. 700]","Mercenary [Lv. 725]","Swan Pirate [Lv. 775]","Factory Staff [Lv. 800]","Marine Lieutenant [Lv. 875]","Marine Captain [Lv. 900]","Zombie [Lv. 950]","Vampire [Lv. 975]","Snow Trooper [Lv. 1000]","Winter Warrior [Lv. 1050]","Lab Subordinate [Lv. 1100]","Horned Warrior [Lv. 1125]","Magma Ninja [Lv. 1175]","Lava Pirate [Lv. 1200]","Ship Deckhand [Lv. 1250]","Ship Engineer [Lv. 1275]","Ship Steward [Lv. 1300]","Ship Officer [Lv. 1325]","Arctic Warrior [Lv. 1350]","Snow Lurker [Lv. 1375]","Sea Soldier [Lv. 1425]","Water Fighter [Lv. 1450]"
+} elseif World3 then
+tableMon = {
+ "Pirate Millionaire [Lv. 1500]","Dragon Crew Warrior [Lv. 1575]","Dragon Crew Archer [Lv. 1600]","Female Islander [Lv. 1625]","Giant Islander [Lv. 1650]","Marine Commodore [Lv. 1700]","Marine Rear Admiral [Lv. 1725]","Fishman Raider [Lv. 1775]","Fishman Captain [Lv. 1800]","Forest Pirate [Lv. 1825]","Mythological Pirate [Lv. 1850]","Jungle Pirate [Lv. 1900]","Musketeer Pirate [Lv. 1925]","Reborn Skeleton [Lv. 1975]","Living Zombie [Lv. 2000]","Demonic Soul [Lv. 2025]","Posessed Mummy [Lv. 2050]", "Peanut Scout [Lv. 2075]", "Peanut President [Lv. 2100]", "Ice Cream Chef [Lv. 2125]", "Ice Cream Commander [Lv. 2150]", "Cookie Crafter [Lv. 2200]", "Cake Guard [Lv. 2225]", "Baking Staff [Lv. 2250]", "Head Baker [Lv. 2275]", "Cocoa Warrior [Lv. 2300]", "Chocolate Bar Battler [Lv. 2325]", "Sweet Thief [Lv. 2350]", "Candy Rebel [Lv. 2375]"
+}
+end
+
+Main:Dropdown("Select Mob", tableMon, function(vu)
+ SelectMonster = vu
+ end)
+
+Main:Toggle("Farm Select Monster", function(vu)
+	_G.AutoFarmSelectMonster = vu
+end)
 
  Main:Toggle("Farm Nearest Monster",_G.AutoFarmNearest,function(vu)
     _G.AutoFarmNearest = vu
@@ -3108,6 +3129,39 @@ end)
 Main:Toggle("Auto Farm Ectoplasm",_G.AutoEctoplasm,function(t)
  _G.AutoEctoplasm = t
 end)
+
+spawn(function()
+while wait() do
+ if _G.AutoFarmNearest then
+ for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+ if v.Name and v:FindFirstChild("Humanoid") then
+ if v.Humanoid.Health > 0 then
+ repeat game:GetService("RunService").Heartbeat:wait()
+ EquipWeapon(_G.Select_Weapon)
+ if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+ local args = {
+  [1] = "Buso"
+ }
+ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+ end
+ PosMon = v.HumanoidRootPart.CFrame
+v.HumanoidRootPart.CanCollide = false
+v.Humanoid.WalkSpeed = 0
+v.Head.CanCollide = false
+v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+StartMagnet = true
+TP(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
+game:GetService'VirtualUser':CaptureController()
+game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+ _G.AutoFarmNearestMagnet = true
+ PosMon = v.HumanoidRootPart.CFrame
+ until not _G.AutoFarmNearest or not v.Parent or v.Humanoid.Health == 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
+ end
+ end
+ end
+ end
+ end
+ end)
 
 spawn(function()
 while wait() do
