@@ -1571,7 +1571,7 @@ MainSection:AddToggle{
 	end
 
 if World2 then
-	OtherSection:AddToggle{
+	MainSection:AddToggle{
 		Name = "Auto Farm Ectoplasm",
 		Flag = "Auto_Farm_Ectoplasm",
 		Value = _G.Settings.Auto_Farm_Ectoplasm,
