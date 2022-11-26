@@ -1,122 +1,3 @@
-_G.Settings = {
-    Auto_Farm_Level = false;
-	Auto_New_World = false;
-	Auto_Third_World = false;
-	Auto_Farm_Chest = false;
-	Auto_Farm_Chest_Hop = false;
-	Auto_Elite_Hunter = false;
-	Auto_Elite_Hunter_Hop = false;
-	Auto_Spawn_Cake_Prince = true;
-	Auto_Cake_Prince = false;
-	Select_Boss = nil;
-	Auto_Farm_Boss = false;
-	Auto_Quest_Boss = true;
-	Auto_Farm_All_Boss = false;
-    Select_Distance = 30;
-	Select_Health = 20;
-    Select_Mode_Farm = "Normal Mode";
-    Select_Bring_Mob_Mode = "Bring Mob [Normal]";
-	Normal_Fast_Attack = true;
-    Extra_Fast_Attack = true;
-	Auto_Set_Spawn = true;
-	Select_Level_to_Redeem_All_Code = 1;
-	Auto_Redeem_All_Code = false;
-    Select_Weapon = nil;
-	Skill_Z = true;
-	Skill_X = true;
-	Skill_C = true;
-	Skill_V = true;
-	Auto_Saber = false;
-	Auto_Saber_Hop = false;
-	Auto_Pole = false;
-	Auto_Pole_Hop = false;
-	Auto_Farm_Scrap_and_Leather = false;
-	Auto_Farm_Angel_Wing = false;
-	Auto_Factory_Farm = false;
-	Auto_Farm_Ectoplasm = false;
-	Auto_Bartilo_Quest = false;
-	Auto_Rengoku = false;
-	Auto_Farm_Radioactive = false;
-	Auto_Farm_Vampire_Fang = false;
-	Auto_Farm_Mystic_Droplet = false;
-	Auto_Evo_Race_V2 = false;
-	Auto_Swan_Glasses = false;
-	Auto_Swan_Glasses_Hop = false;
-	Auto_Dragon_Trident = false;
-	Auto_Dragon_Trident_Hop = false;
-	Auto_Buy_Legendary_Sword = false;
-	Auto_Buy_Enchancement = false;
-	Auto_Soul_Reaper = false;
-	Auto_Farm_GunPowder = false;
-	Auto_Farm_Dragon_Scales = false;
-	Auto_Soul_Reaper_Hop = false;
-	Auto_Farm_Fish_Tail = false;
-	Auto_Farm_Mini_Tusk = false;
-	Auto_Farm_Magma_Ore = false;
-	Auto_Farm_Bone = false;
-	Auto_Farm_Conjured_Cocoa = false;
-	Auto_Open_Dough_Dungeon = false;
-	Auto_Yama = false;
-	Auto_Trade_Bone = false;
-	Auto_Rainbow_Haki = false;
-	Auto_Rainbow_Haki_Hop = false;
-	Auto_Musketeer_Hat = false;
-	Auto_Holy_Torch = false;
-	Auto_Canvander = false;
-	Auto_Canvander_Hop = false;
-	Auto_Twin_Hook = false;
-	Auto_Twin_Hook_Hop = false;
-	Auto_Serpent_Bow = false;
-	Auto_Serpent_Bow_Hop = false;
-	Auto_Superhuman = false;
-	Auto_Fully_Superhuman = false;
-	Auto_Death_Step = false;
-	Auto_Fully_Death_Step = false;
-	Auto_SharkMan_Karate = false;
-	Auto_Fully_SharkMan_Karate = false;
-	Auto_Electric_Claw = false;
-	Auto_Dragon_Talon = false;
-	Auto_God_Human = false;
-	Auto_Stats_Kaitun = false;
-	Auto_Stats_Melee = false;
-	Auto_Stats_Defense = false;
-	Auto_Stats_Sword = false;
-	Auto_Stats_Gun = false;
-	Auto_Stats_Devil_Fruit = false;
-	Point = 1;
-	No_clip = false;
-	Infinit_Energy = false;
-	Dodge_No_CoolDown = false;
-	Infinit_Ability = false;
-	Infinit_SkyJump = false;
-	Infinit_Soru = false;
-	Infinit_Range_Observation_Haki = false;
-	Select_Size_Fov = 200;
-	Show_Fov = false;
-	Select_Player = nil;
-	Spectate_Player = false;
-	Teleport_to_Player = false;
-	Auto_Kill_Player_Melee = false;
-	Auto_Kill_Player_Gun = false;
-	Select_Island = nil;
-	Start_Tween_Island = false;
-	Select_Dungeon = nil;
-	Auto_Buy_Chips_Dungeon = false;
-	Auto_Start_Dungeon = false;
-	Auto_Next_Island = false;
-	Kill_Aura = false;
-	Auto_Awake = false;
-	Auto_Buy_Law_Chip = false;
-	Auto_Start_Law_Dungeon = false;
-	Auto_Kill_Law = false;
-	Select_Weapon_Law_Raid = nil;
-	Select_Devil_Fruit = nil;
-	Auto_Buy_Devil_Fruit = false;
-	Auto_Random_Fruit = false;
-	Auto_Bring_Fruit = false;
-	Auto_Store_Fruit = false;
-}
-
 local foldername = "Feet Hub"
 local filename = "BloxFruit "..game.Players.LocalPlayer.Name.." Config.json"
  
@@ -1548,33 +1429,6 @@ spawn(function()
 	end)
 end)
 
-local Client = game.Players.LocalPlayer
-local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
-local STOPRL = require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)
-spawn(function()
-	while task.wait() do
-		pcall(function()
-			if not shared.orl then shared.orl = STOPRL.wrapAttackAnimationAsync end
-			if not shared.cpc then shared.cpc = STOP.play end
-				STOPRL.wrapAttackAnimationAsync = function(a,b,c,d,func)
-				local Hits = STOPRL.getBladeHits(b,c,d)
-				if Hits then
-                    if _G.Auto_Farm_Level or _G.Auto_New_World or _G.Auto_Third_World or _G.Auto_Farm_Boss or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate then
-                        STOP.play = function() end
-                        a:Play(0.01,0.01,0.01)
-                        func(Hits)
-                        STOP.play = shared.cpc
-                        wait(a.length * 0.5)
-                        a:Stop()
-                    else
-                        a:Play()
-                    end
-				end
-			end
-		end)
-	end
-end)
-
 spawn(function()
     while wait() do
         if setscriptable then
@@ -1712,6 +1566,27 @@ spawn(function()
 	end)
 end)
 
+local colors = {
+	main = Color3.fromRGB(255, 255, 255),
+	background = Color3.fromRGB(30, 30, 30),
+	outerBorder = Color3.fromRGB(196, 196, 196),
+	innerBorder = Color3.fromRGB(196, 196, 196),
+	topGradient = Color3.fromRGB(35, 35, 35),
+	bottomGradient = Color3.fromRGB(29, 29, 29),
+	sectionBackground = Color3.fromRGB(35, 34, 34),
+	section = Color3.fromRGB(176, 175, 176),
+	otherElementText = Color3.fromRGB(129, 127, 129),
+	elementText = Color3.fromRGB(147, 145, 147),
+	elementBorder = Color3.fromRGB(20, 20, 20),
+	selectedOption = Color3.fromRGB(55, 55, 55),
+	unselectedOption = Color3.fromRGB(40, 40, 40),
+	hoveredOptionTop = Color3.fromRGB(65, 65, 65),
+	unhoveredOptionTop = Color3.fromRGB(50, 50, 50),
+	hoveredOptionBottom = Color3.fromRGB(45, 45, 45),
+	unhoveredOptionBottom = Color3.fromRGB(35, 35, 35),
+	tabText = Color3.fromRGB(185, 185, 185)
+}
+
 --------------------------------------------
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zenhubzen/test/main/newui"))()
@@ -1729,6 +1604,41 @@ local MainTab = PepsisWorld:CreateTab({
     Name = "Main"
 })
 
+
+local PlayerStatsSection1 = MainTab:CreateSection({
+    Name = "",
+	Side = "Left"
+})
+
+
+PlayerStatsSection1:AddLabel({
+	Name = "Welcome To Zen Hub!",
+	Flag = ""
+})
+
+PlayerStatsSection1:AddLabel({
+	Name = ""..game.Players.LocalPlayer.Name,
+	Flag = ""
+})
+
+if World1 then
+	PlayerStatsSection1:AddLabel({
+		Name = "World : 1",
+		Flag = ""
+	})
+elseif World2 then
+	PlayerStatsSection1:AddLabel({
+		Name = "World : 2",
+		Flag = ""
+	})
+elseif World3 then
+	PlayerStatsSection1:AddLabel({
+		Name = "World : 3",
+		Flag = ""
+	})
+end
+
+
 local MainSection = MainTab:CreateSection({
     Name = "Main Farm",
 	Side = "Left"
@@ -1738,7 +1648,7 @@ MainSection:AddDropdown({
     Name = "Select Mode Farm",
     Flag = "Select_Mode_Farm",
 	Value = _G.Settings.Select_Mode_Farm,
-    List = {"Normal Mode","Fast Mode","No Quest","Near Farm Mode","Fruit Mastery Mode","Gun Mastery Mode","Near Farm Mode"},
+    List = {"Normal Mode","Fast Mode","No Quest","Near Farm Mode","Fruit Mastery Mode","Gun Mastery Mode",},
     Callback = function(value)
         _G.Select_Mode_Farm = value
 		_G.Settings.Select_Mode_Farm = value
@@ -1791,7 +1701,7 @@ if World2 then
 					if _G.Auto_Farm_Ectoplasm and MagnetEctoplasm and string.find(v.Name, "Ship") and (v.HumanoidRootPart.Position - PosMonEctoplasm.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonEctoplasm
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -1814,7 +1724,7 @@ if World2 then
 									EquipWeapon(_G.Select_Weapon)
 									PosMonEctoplasm = v.HumanoidRootPart.CFrame
 									v.HumanoidRootPart.CanCollide = false
-									v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+									v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 									topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 									MagnetEctoplasm = true
 									game:GetService'VirtualUser':CaptureController()
@@ -1847,7 +1757,7 @@ if World2 then
 					if _G.Auto_Farm_Bone and StartMagnetBoneMon and (v.Name == "Reborn Skeleton [Lv. 1975]" or v.Name == "Living Zombie [Lv. 2000]" or v.Name == "Demonic Soul [Lv. 2025]" or v.Name == "Posessed Mummy [Lv. 2050]") and (v.HumanoidRootPart.Position - PosMonBone.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonBone
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -1908,7 +1818,7 @@ spawn(function()
 					if _G.Auto_Farm_Level and StartMagnet and v.Name == Ms and (v.HumanoidRootPart.Position - PosMon.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMon
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -1920,7 +1830,7 @@ spawn(function()
 					if _G.Auto_Farm_Level and StartMagnet and v.Name ~= "Ice Admiral [Lv. 700] [Boss]" and v.Name ~= "Don Swan [Lv. 3000] [Boss]" and v.Name ~= "Saber Expert [Lv. 200] [Boss]" and v.Name ~= "Longma [Lv. 2000] [Boss]" and (v.HumanoidRootPart.Position - PosMon.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMon
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -1939,7 +1849,7 @@ spawn(function()
 				if _G.Auto_Farm_Level and MasteryBFMagnetActive and v.Name == Ms and (v.HumanoidRootPart.Position - PosMonMasteryFruit.Position).magnitude <= 350 then
 					v.HumanoidRootPart.CFrame = PosMonMasteryFruit
 					v.HumanoidRootPart.CanCollide = false
-					v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+					v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 					if v.Humanoid:FindFirstChild("Animator") then
 						v.Humanoid.Animator:Destroy()
 					end
@@ -1957,7 +1867,7 @@ spawn(function()
 				if _G.Auto_Farm_Level and MasteryGunMagnetActive and v.Name == Ms and (v.HumanoidRootPart.Position - PosMonMasteryGun.Position).magnitude <= 350 then
 					v.HumanoidRootPart.CFrame = PosMonMasteryGun
 					v.HumanoidRootPart.CanCollide = false
-					v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+					v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 					if v.Humanoid:FindFirstChild("Animator") then
 						v.Humanoid.Animator:Destroy()
 					end
@@ -2000,7 +1910,7 @@ spawn(function()
 												v.HumanoidRootPart.CanCollide = false
 												v.Humanoid.WalkSpeed = 0
 												v.Head.CanCollide = false
-												v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+												v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 												StartMagnet = true
 												topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 												game:GetService'VirtualUser':CaptureController()
@@ -2048,7 +1958,7 @@ spawn(function()
 													v.HumanoidRootPart.CanCollide = false
 													v.Humanoid.WalkSpeed = 0
 													v.Head.CanCollide = false
-													v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+													v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 													StartMagnet = true
 													topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 													game:GetService'VirtualUser':CaptureController()
@@ -2094,7 +2004,7 @@ spawn(function()
 											v.HumanoidRootPart.CanCollide = false
 											v.Humanoid.WalkSpeed = 0
 											v.Head.CanCollide = false
-											v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+											v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 											StartMagnet = true
 											topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 											game:GetService'VirtualUser':CaptureController()
@@ -2113,33 +2023,6 @@ spawn(function()
 						end
 					end
 				end)
-				elseif _G.Select_Mode_Farm == "Near Farm Mode" then
-  for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-  if v.Name and v:FindFirstChild("Humanoid") then
-  if v.Humanoid.Health > 0 then
-  repeat game:GetService("RunService").Heartbeat:wait()
-  EquipWeapon(_G.Select_Weapon)
-  if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
-  local args = {
-   [1] = "Buso"
-  }
-  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-  end
-  PosMon = v.HumanoidRootPart.CFrame
- v.HumanoidRootPart.CanCollide = false
- v.Humanoid.WalkSpeed = 0
- v.Head.CanCollide = false
- v.HumanoidRootPart.Size = Vector3.new(60,60,60)
- AutoFarmStartMagnet = true
- topos(v.HumanoidRootPart.CFrame * MethodFarm)
- game:GetService'VirtualUser':CaptureController()
- game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-  Magnet = true
-  PosMon = v.HumanoidRootPart.CFrame
-  until not _G.AutoFarm or not v.Parent or v.Humanoid.Health == 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
-  end
-  end
-end
             elseif _G.Select_Mode_Farm == "Fruit Mastery Mode" then
 				pcall(function()
 					if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
@@ -2311,7 +2194,7 @@ end
 						end 
 					end
 				end)
-elseif _G.SelectModeFarm == "Near Farm Mode" then
+elseif _G.Select_Mode_Farm == "Near Farm Mode" then
   for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
   if v.Name and v:FindFirstChild("Humanoid") then
   if v.Humanoid.Health > 0 then
@@ -2329,10 +2212,10 @@ elseif _G.SelectModeFarm == "Near Farm Mode" then
  v.Head.CanCollide = false
  v.HumanoidRootPart.Size = Vector3.new(60,60,60)
  StartMagnet = true
- topos(v.HumanoidRootPart.CFrame * MethodFarm)
+ topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
  game:GetService'VirtualUser':CaptureController()
  game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-  Magnet = true
+  NearFarmMagnet = true
   PosMon = v.HumanoidRootPart.CFrame
   until not _G.Auto_Farm_Level or not v.Parent or v.Humanoid.Health == 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
   end
@@ -2431,7 +2314,7 @@ spawn(function()
 										AutoHaki()
 										EquipWeapon(_G.Select_Weapon)
 										v.HumanoidRootPart.CFrame = OldCFrameThird
-										v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+										v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 										v.HumanoidRootPart.CanCollide = false
 										v.Humanoid.WalkSpeed = 0
 										topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
@@ -2574,7 +2457,7 @@ if World3 then
 												EquipWeapon(_G.Select_Weapon)
 												v.HumanoidRootPart.CanCollide = false
 												v.Humanoid.WalkSpeed = 0
-												v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+												v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 												topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 												game:GetService("VirtualUser"):CaptureController()
 												game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
@@ -2663,7 +2546,7 @@ if World3 then
 					if _G.Auto_Open_Dough_Dungeon and StartCakeMagnet and (v.Name == "Cookie Crafter [Lv. 2200]" or v.Name == "Cake Guard [Lv. 2225]" or v.Name == "Baking Staff [Lv. 2250]" or v.Name == "Head Baker [Lv. 2275]") and (v.HumanoidRootPart.Position - POSCAKE.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = POSCAKE
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -2681,7 +2564,7 @@ if World3 then
 					if _G.Auto_Cake_Prince and StartCakeMagnet and (v.Name == "Cookie Crafter [Lv. 2200]" or v.Name == "Cake Guard [Lv. 2225]" or v.Name == "Baking Staff [Lv. 2250]" or v.Name == "Head Baker [Lv. 2275]") and (v.HumanoidRootPart.Position - POSCAKE.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = POSCAKE
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -2989,35 +2872,63 @@ SettingSection:AddToggle{
 }
 
 local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
-for i,v in pairs(getreg()) do
-    if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
-        for x,w in pairs(debug.getupvalues(v)) do
-             if typeof(w) == "table" then
-                spawn(function()
-                    game:GetService("RunService").RenderStepped:Connect(function()
-                        if _G.Normal_Fast_Attack then
-                            pcall(function()
-								if game.Players.LocalPlayer.Character:FindFirstChild("Combat") or game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Character:FindFirstChild("Electro") or game.Players.LocalPlayer.Character:FindFirstChild("Fishman Karate") or game.Players.LocalPlayer.Character:FindFirstChild("Dragon Claw") or game.Players.LocalPlayer.Character:FindFirstChild("Superhuman") or game.Players.LocalPlayer.Character:FindFirstChild("Sharkman Karate") then
-									w.activeController.increment = 3
-								else
-									w.activeController.increment = 4
-								end             
-                                CameraShaker:Stop()
-                                w.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
-                                w.activeController.attacking = false
-								w.activeController.timeToNextBlock = 0
-                                w.activeController.blocking = false                            
-                                w.activeController.hitboxMagnitude = 50
-    		                    w.activeController.humanoid.AutoRotate = true
-    	                      	w.activeController.focusStart = 0
-                            end)
-                        end
-                    end)
-                end)
-            end
-        end
-    end
+CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+y = debug.getupvalues(CombatFrameworkR)[2]
+spawn(function()
+game:GetService("RunService").RenderStepped:Connect(function()
+	if _G.Normal_Fast_Attack then
+		if typeof(y) == "table" then
+			pcall(function()
+				CameraShaker:Stop()
+				y.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
+				y.activeController.timeToNextAttack = 0
+				y.activeController.hitboxMagnitude = 9999
+				y.activeController.active = false
+				y.activeController.timeToNextBlock = 0
+				y.activeController.focusStart = 0
+				y.activeController.increment = 4
+				y.activeController.blocking = false
+				y.activeController.attacking = false
+				y.activeController.humanoid.AutoRotate = true
+			end)
+		end
+	end
+end)
+end)
+
+local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+local CombatFramework = debug.getupvalues(Module)[2]
+local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
+
+spawn(function()
+while true do
+	if _G.Extra_Fast_Attack then
+		pcall(function()
+			CameraShakerR:Stop()
+			CombatFramework.activeController.attacking = false
+			CombatFramework.activeController.timeToNextAttack = 0
+			CombatFramework.activeController.increment = 3
+			CombatFramework.activeController.hitboxMagnitude = 100
+			CombatFramework.activeController.blocking = false
+			CombatFramework.activeController.timeToNextBlock = 0
+			CombatFramework.activeController.focusStart = 0
+			CombatFramework.activeController.humanoid.AutoRotate = true
+		end)
+	end
+	task.wait()
 end
+end)
+
+spawn(function()
+game:GetService("RunService").RenderStepped:Connect(function()
+	if _G.Extra_Fast_Attack == true then
+		game.Players.LocalPlayer.Character.Stun.Value = 0
+		game.Players.LocalPlayer.Character.Humanoid.Sit = false
+		game.Players.LocalPlayer.Character.Busy.Value = false        
+	end
+end)
+end)
+
 
 SettingSection:AddToggle{
     Name = "Fast Attack [Extra]",
@@ -3029,56 +2940,6 @@ SettingSection:AddToggle{
         saveSettings()
     end
 }
-
-spawn(function()
-	while task.wait() do
-        if _G.Extra_Fast_Attack then
-			pcall(function()
-				wait(0.2)
-				local AC = CbFw2.activeController
-				for i = 1,1 do 
-					local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
-						plr.Character,
-						{plr.Character.HumanoidRootPart},
-						60
-					)
-					local cac = {}
-					local hash = {}
-					for k, v in pairs(bladehit) do
-						if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
-							table.insert(cac, v.Parent.HumanoidRootPart)
-							hash[v.Parent] = true
-						end
-					end
-					bladehit = cac
-					if #bladehit > 0 then
-						local u8 = debug.getupvalue(AC.attack, 5)
-						local u9 = debug.getupvalue(AC.attack, 6)
-						local u7 = debug.getupvalue(AC.attack, 4)
-						local u10 = debug.getupvalue(AC.attack, 7)
-						local u12 = (u8 * 798405 + u7 * 727595) % u9
-						local u13 = u7 * 798405
-						(function()
-							u12 = (u12 * u9 + u13) % 1099511627776
-							u8 = math.floor(u12 / u9)
-							u7 = u12 - u8 * u9
-						end)()
-						u10 = u10 + 1
-						debug.setupvalue(AC.attack, 5, u8)
-						debug.setupvalue(AC.attack, 6, u9)
-						debug.setupvalue(AC.attack, 4, u7)
-						debug.setupvalue(AC.attack, 7, u10)
-						if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
-							game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
-							game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
-							game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
-						end
-					end
-				end
-			end)
-        end
-	end
-end)
 
 SettingSection:AddToggle{
     Name = "Auto Set Spawn",
@@ -3345,7 +3206,7 @@ spawn(function()
 					if Auto_Quest_Yama_2 and v:FindFirstChild("HazeESP") and (v.HumanoidRootPart.Position - PosMonsEsp.Position).magnitude <= 300 then
 						v.HumanoidRootPart.CFrame = PosMonsEsp
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if not v.HumanoidRootPart:FindFirstChild("BodyVelocity") then
 							local vc = Instance.new("BodyVelocity", v.HumanoidRootPart)
 							vc.MaxForce = Vector3.new(1, 1, 1) * math.huge
@@ -3996,7 +3857,7 @@ elseif World2 then
 					if _G.Auto_Rengoku and StartRengokuMagnet and (v.Name == "Snow Lurker [Lv. 1375]" or v.Name == "Arctic Warrior [Lv. 1350]") and (v.HumanoidRootPart.Position - RengokuMon.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = RengokuMon
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -4021,7 +3882,7 @@ elseif World2 then
 									AutoHaki()
 									EquipWeapon(_G.Select_Weapon)
 									v.HumanoidRootPart.CanCollide = false
-									v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+									v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 									RengokuMon = v.HumanoidRootPart.CFrame
 									topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 									game:GetService'VirtualUser':CaptureController()
@@ -4191,7 +4052,7 @@ elseif World3 then
 											AutoHaki()
 											EquipWeapon(_G.Select_Weapon)
 											v.HumanoidRootPart.CanCollide = false
-											v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+											v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 											topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 											game:GetService'VirtualUser':CaptureController()
 											game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
@@ -4294,7 +4155,7 @@ elseif World3 then
 													EquipWeapon(_G.Select_Weapon)
 													v.HumanoidRootPart.CanCollide = false
 													v.Humanoid.WalkSpeed = 0
-													v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+													v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 													topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 													game:GetService("VirtualUser"):CaptureController()
 													game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
@@ -4389,7 +4250,7 @@ elseif World3 then
 											topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 											v.HumanoidRootPart.CanCollide = false
 											v.HumanoidRootPart.CFrame = OldCFrameRainbow
-											v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+											v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 											game:GetService'VirtualUser':CaptureController()
 											game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 											sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
@@ -4416,7 +4277,7 @@ elseif World3 then
 											topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 											v.HumanoidRootPart.CanCollide = false
 											v.HumanoidRootPart.CFrame = OldCFrameRainbow
-											v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+											v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 											game:GetService'VirtualUser':CaptureController()
 											game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 											sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
@@ -4442,7 +4303,7 @@ elseif World3 then
 											EquipWeapon(_G.Select_Weapon)
 											topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 											v.HumanoidRootPart.CanCollide = false
-											v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+											v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 											v.HumanoidRootPart.CFrame = OldCFrameRainbow
 											game:GetService'VirtualUser':CaptureController()
 											game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
@@ -4469,7 +4330,7 @@ elseif World3 then
 											EquipWeapon(_G.Select_Weapon)
 											topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 											v.HumanoidRootPart.CanCollide = false
-											v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+											v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 											v.HumanoidRootPart.CFrame = OldCFrameRainbow
 											game:GetService'VirtualUser':CaptureController()
 											game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
@@ -4496,7 +4357,7 @@ elseif World3 then
 											EquipWeapon(_G.Select_Weapon)
 											topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 											v.HumanoidRootPart.CanCollide = false
-											v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+											v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 											v.HumanoidRootPart.CFrame = OldCFrameRainbow
 											game:GetService'VirtualUser':CaptureController()
 											game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
@@ -4710,7 +4571,7 @@ Others:AddToggle{
 					if _G.Auto_Bartilo_Quest and AutoBartiloBring and v.Name == "Swan Pirate [Lv. 775]" and (v.HumanoidRootPart.Position - PosMonBarto.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonBarto
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -4736,7 +4597,7 @@ Others:AddToggle{
 												EquipWeapon(_G.Select_Weapon)
 												v.HumanoidRootPart.Transparency = 1
 												v.HumanoidRootPart.CanCollide = false
-												v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+												v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 												topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))													
 												PosMonBarto =  v.HumanoidRootPart.CFrame
 												game:GetService'VirtualUser':CaptureController()
@@ -4766,7 +4627,7 @@ Others:AddToggle{
 										EquipWeapon(_G.Select_Weapon)
 										v.HumanoidRootPart.Transparency = 1
 										v.HumanoidRootPart.CanCollide = false
-										v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+										v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 										v.HumanoidRootPart.CFrame = OldCFrameBartlio
 										topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 										game:GetService'VirtualUser':CaptureController()
@@ -4826,7 +4687,7 @@ Others:AddToggle{
 					if _G.Auto_Evo_Race_V2 and StartEvoMagnet and v.Name == "Swan Pirate [Lv. 775]" and (v.HumanoidRootPart.Position - PosMonEvo.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonEvo
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -4863,7 +4724,7 @@ Others:AddToggle{
 													EquipWeapon(_G.Select_Weapon)
 													topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 													v.HumanoidRootPart.CanCollide = false
-													v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+													v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 													game:GetService'VirtualUser':CaptureController()
 													game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 													PosMonEvo = v.HumanoidRootPart.CFrame
@@ -4980,7 +4841,7 @@ Others:AddToggle{
 					if _G.Auto_Musketeer_Hat and StartMagnetMusketeerhat and v.Name == "Forest Pirate [Lv. 1825]" and (v.HumanoidRootPart.Position - MusketeerHatMon.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = MusketeerHatMon
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -5004,7 +4865,7 @@ Others:AddToggle{
 											pcall(function()
 												AutoHaki()
 												EquipWeapon(_G.Select_Weapon)
-												v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+												v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 												topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 												v.HumanoidRootPart.CanCollide = false
 												game:GetService'VirtualUser':CaptureController()
@@ -5038,7 +4899,7 @@ Others:AddToggle{
 												AutoHaki()
 												EquipWeapon(_G.Select_Weapon)
 												v.HumanoidRootPart.CanCollide = false
-												v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+												v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 												topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 												v.HumanoidRootPart.CanCollide = false
 												v.HumanoidRootPart.CFrame = OldCFrameElephant
@@ -5124,7 +4985,7 @@ Material:AddToggle{
 					if _G.Auto_Farm_Fish_Tail and StartMagnetFishTailMon and (v.Name == "Fishman Warrior [Lv. 375]" or v.Name == "Fishman Commando [Lv. 400]") and (v.HumanoidRootPart.Position - PosMonFishTail.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonFishTail
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -5195,7 +5056,7 @@ spawn(function()
 					if _G.Auto_Farm_Magma_Ore and StartMagnetMagmaOreMon and (v.Name == "Military Soldier [Lv. 300]" or v.Name == "Military Spy [Lv. 325]") and (v.HumanoidRootPart.Position - PosMonMagmaOre.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonMagmaOre
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -5263,7 +5124,7 @@ spawn(function()
 					if _G.Auto_Farm_Scrap_and_Leather and StartMagnetScrapleatherMon and (v.Name == "Pirate [Lv. 35]" or v.Name == "Brute [Lv. 45]") and (v.HumanoidRootPart.Position - PosMonScrapleather.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonScrapleather
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -5331,7 +5192,7 @@ spawn(function()
 					if _G.Auto_Farm_Angel_Wing and StartMagnetAngelWingMon and (v.Name == "Royal Squad [Lv. 525]" or v.Name == "Royal Soldier [Lv. 550]") and (v.HumanoidRootPart.Position - PosMonAngelWing.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonAngelWing
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -5402,7 +5263,7 @@ Material:AddToggle{
 					if _G.Auto_Farm_Scrap_and_Leather and StartMagnetScrapleatherMon and v.Name == "Mercenary [Lv. 725]" and (v.HumanoidRootPart.Position - PosMonScrapleather.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonScrapleather
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -5468,7 +5329,7 @@ Material:AddToggle{
 					if _G.Auto_Farm_Radioactive and StartMagnetRadioactive and v.Name == "Factory Staff [Lv. 800]" and (v.HumanoidRootPart.Position - PosMonRadioactive.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonRadioactive
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -5534,7 +5395,7 @@ Material:AddToggle{
 					if _G.Auto_Farm_Vampire_Fang and StartMagnetVampireFang and v.Name == "Vampire [Lv. 975]" and (v.HumanoidRootPart.Position - PosMonVampireFang.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonVampireFang
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -5600,7 +5461,7 @@ Material:AddToggle{
 					if _G.Auto_Farm_Magma_Ore and StartMagnetMagmaOreMon and (v.Name == "Magma Ninja [Lv. 1175]" or v.Name == "Lava Pirate [Lv. 1200]") and (v.HumanoidRootPart.Position - PosMonMagmaOre.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonMagmaOre
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -5668,7 +5529,7 @@ Material:AddToggle{
 					if _G.Auto_Farm_Mystic_Droplet and StartMagnetMysticDropletMon and (v.Name == "Sea Soldier [Lv. 1425]") and (v.HumanoidRootPart.Position - PosMonMysticDroplet.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonMysticDroplet
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -5737,7 +5598,7 @@ if World3 then
 					if _G.Auto_Farm_Scrap_and_Leather and StartMagnetScrapleatherMon and v.Name == "Pirate Millionaire [Lv. 1500]" and (v.HumanoidRootPart.Position - PosMonScrapleather.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonScrapleather
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -5803,7 +5664,7 @@ if World3 then
 					if _G.Auto_Farm_GunPowder and StartMagnetGunPowderMon and v.Name == "Pistol Billionaire [Lv. 1525]" and (v.HumanoidRootPart.Position - PosMonGunPowder.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonGunPowder
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -5869,7 +5730,7 @@ if World3 then
 					if _G.Auto_Farm_Dragon_Scales and StartMagnetDragonScalesMon and (v.Name == "Dragon Crew Warrior [Lv. 1575]") and (v.HumanoidRootPart.Position - PosMonDragonScales.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonDragonScales
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -5935,7 +5796,7 @@ if World3 then
 					if _G.Auto_Farm_Fish_Tail and StartMagnetFishTailMon and (v.Name == "Fishman Raider [Lv. 1775]" or v.Name == "Fishman Captain [Lv. 1800]") and (v.HumanoidRootPart.Position - PosMonFishTail.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonFishTail
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -6003,7 +5864,7 @@ if World3 then
 					if _G.Auto_Farm_Mini_Tusk and StartMagnetMiniTuskMon and v.Name == "Mythological Pirate [Lv. 1850]" and (v.HumanoidRootPart.Position - PosMonMiniTusk.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonMiniTusk
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -6069,7 +5930,7 @@ if World3 then
 					if _G.Auto_Farm_Conjured_Cocoa and StartMagnetConjuredCocoaMon and (v.Name == "Cocoa Warrior [Lv. 2300]" or v.Name == "Chocolate Bar Battler [Lv. 2325]") and (v.HumanoidRootPart.Position - PosMonConjuredCocoa.Position).magnitude <= 350 then
 						v.HumanoidRootPart.CFrame = PosMonConjuredCocoa
 						v.HumanoidRootPart.CanCollide = false
-						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 						if v.Humanoid:FindFirstChild("Animator") then
 							v.Humanoid.Animator:Destroy()
 						end
@@ -6324,7 +6185,7 @@ spawn(function()
 											v.Head.CanCollide = false
 											v.Humanoid.WalkSpeed = 0
 											v.HumanoidRootPart.CanCollide = false
-											v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+											v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 											topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 											game:GetService'VirtualUser':CaptureController()
 											game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
@@ -6419,7 +6280,7 @@ spawn(function()
 											v.Head.CanCollide = false
 											v.Humanoid.WalkSpeed = 0
 											v.HumanoidRootPart.CanCollide = false
-											v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+											v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 											topos(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
 											game:GetService'VirtualUser':CaptureController()
 											game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
@@ -7885,7 +7746,7 @@ spawn(function()
 								AutoHaki()
 								EquipWeapon(_G.Select_Weapon_Law_Raid)
 								v.HumanoidRootPart.CanCollide = false
-								v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+								v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 								topos(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
 								game:GetService'VirtualUser':CaptureController()
 								game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
