@@ -1,7 +1,7 @@
 
 local library = {
 	Version = "2",
-	WorkspaceName = "ThunderZ Kaitan",
+	WorkspaceName = "ZenHub Kaitan",
 	flags = {},
 	signals = {},
 	objects = {},
@@ -1096,7 +1096,7 @@ do
 					Close.AnchorPoint = Vector2.new(1)
 					Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 					Close.BackgroundTransparency = 1
-					Close.Image = "http://www.roblox.com/asset/?id=9064270627"
+					Close.Image = "http://www.roblox.com/asset/?id=11354741327"
 					Close.ImageColor3 = library.colors.section
 					colored[1 + #colored] = {Close, "ImageColor3", "section"}
 					Close.Name = "Close"
