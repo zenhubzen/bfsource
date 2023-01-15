@@ -1,5 +1,5 @@
 key = {
-    ["Test"] = true,
-        ["test"] = true,
+    [Tst] = true,
+        [Test] = true,
 }
 return key
