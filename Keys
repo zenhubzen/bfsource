@@ -1,5 +1,5 @@
-key = {
-    [Tst] = true,
-        [Test] = true,
+local key = {
+    ["Tst"] = true,
+        ["Test"] = true,
 }
 return key
