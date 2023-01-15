@@ -1,5 +1,5 @@
-local key = {
-  "Test",
-  "Fuck",
-  "Shit"
+key = {
+    ["Test"] = true,
+        ["test"] = true,
 }
+return key
