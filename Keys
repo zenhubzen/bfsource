@@ -1,2 +1,6 @@
-local key = "ZenHub"
+local key = {
+"KEY-BESTUPDATE",
+"KEY-KEYMOBILE",
+"KEY-NEWUI"
+}
 return key
