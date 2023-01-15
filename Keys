@@ -3,4 +3,3 @@ local key = {
   "Fuck",
   "Shit"
 }
-return key
