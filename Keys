@@ -1,6 +1,2 @@
-local key = {
-"KEY-BESTUPDATE",
-"KEY-KEYMOBILE",
-"KEY-NEWUI"
-}
+local key = "TEST" or "Test2"
 return key
