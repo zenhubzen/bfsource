@@ -1,2 +1,2 @@
-local key = "perma"
+local key = "permas"
 return key
