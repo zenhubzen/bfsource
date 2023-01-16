@@ -1,5 +1,2 @@
-local key = {
-    ["Tst"] = true,
-        ["Test"] = true,
-}
+local key = "Test123"
 return key
