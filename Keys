@@ -1,6 +1,2 @@
-local key = keys
-keys = {
-  "Jade",
-  "Lols"
-}
+local key = "Key2" or "key1" or "key3"
 return key
