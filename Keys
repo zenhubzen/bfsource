@@ -1,6 +1,2 @@
-local key = {
-  "Test",
-  "Shit",
-  "Fuck"
-}
+local key = "Test", "key1", "key3"
 return key
