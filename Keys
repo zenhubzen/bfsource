@@ -1,2 +1,2 @@
-local keys = {"Shop", "Look"}
-return keys
+local key1,key2 =  "Test12", "Test3"
+return key1 and key2
