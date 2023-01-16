@@ -1,2 +1,2 @@
-local key = "Bayut" or "si" or "Frince"
+local key = "Bayut", "si", "Frince"
 return key
