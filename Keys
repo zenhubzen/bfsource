@@ -1,2 +1,2 @@
-local key = "Test", "key1", "key3"
+local key = "Key2", "key1", "key3"
 return key
