@@ -1,2 +1,3 @@
-local key, key2, key3 = "KEY-RYDER", "KEY-TREEK", "KEY-PROMAX"
-return key and key2 and key3
+local key, key2, key3, key4 = "KEY-RYDER", "KEY-TREEK", "KEY-PROMAX", "KEY-0388488"
+return key and key2 and key3 and key4
+
