@@ -1,0 +1,6 @@
+if not game:GetService("UserInputService").TouchEnabled and not game:GetService("UserInputService").KeyboardEnabled == false then
+    -- PC Script Load Here
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zenhubzen/bfsource/main/pcversion.lua", true))()
+    else
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zenhubzen/bfsource/main/mobileversion.lua", true))()
+  end
