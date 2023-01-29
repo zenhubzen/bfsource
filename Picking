@@ -1,0 +1,166 @@
+local keysystem = Instance.new("ScreenGui")
+local Main1 = Instance.new("Frame")
+local maincorner = Instance.new("UICorner")
+local LOGO = Instance.new("ImageLabel")
+local Frame = Instance.new("Frame")
+local CORNERGET = Instance.new("UICorner")
+local DISCORD = Instance.new("TextButton")
+local CORNERDISCORD = Instance.new("UICorner")
+local NAME = Instance.new("TextLabel")
+local HUB = Instance.new("TextLabel")
+local getkey = Instance.new("TextButton")
+local CORNERDISCORD_2 = Instance.new("UICorner")
+local SUBMIT = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local NO1 = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local TITLENO = Instance.new("TextLabel")
+local TEXTNO = Instance.new("TextLabel")
+local NO2 = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local NOTI = Instance.new("TextLabel")
+local WindowStroke = Instance.new("UIStroke")
+local WindowStrokeshit = Instance.new("UIStroke")
+local WindowStrokeshit1 = Instance.new("UIStroke")
+local WindowStrokeshit2 = Instance.new("UIStroke")
+local WindowStrokeshit3 = Instance.new("UIStroke")
+local WindowStrokeshit4 = Instance.new("UIStroke")
+
+
+--Properties:
+
+keysystem.Name = "keysystem"
+keysystem.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+keysystem.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main1.Name = "Main1"
+Main1.Parent = keysystem
+Main1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Main1.Position = UDim2.new(0.317497045, 0, 0.144578308, 0)
+Main1.Size = UDim2.new(0, 190, 0, 200)
+Main1.Active = true
+Main1.Visible = false
+Main1.Draggable = true
+
+WindowStroke.Name = "WindowStroke"
+WindowStroke.Parent = Main1
+WindowStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+WindowStroke.Color = Color3.fromRGB(255,255,255)
+WindowStroke.LineJoinMode = Enum.LineJoinMode.Round
+WindowStroke.Thickness = 2
+WindowStroke.Transparency = 0
+WindowStroke.Enabled = true
+WindowStroke.Archivable = true
+
+WindowStrokeshit.Name = "WindowStroke"
+WindowStrokeshit.Parent = KEYHERE
+WindowStrokeshit.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+WindowStrokeshit.Color = Color3.fromRGB(231, 54, 0)
+WindowStrokeshit.LineJoinMode = Enum.LineJoinMode.Round
+WindowStrokeshit.Thickness = 1
+WindowStrokeshit.Transparency = 0
+WindowStrokeshit.Archivable = false
+WindowStrokeshit.Enabled = true
+
+WindowStrokeshit1.Name = "WindowStroke"
+WindowStrokeshit1.Parent = destroy
+WindowStrokeshit1.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+WindowStrokeshit1.Color = Color3.fromRGB(255, 255, 255)
+WindowStrokeshit1.LineJoinMode = Enum.LineJoinMode.Round
+WindowStrokeshit1.Thickness = 1
+WindowStrokeshit1.Transparency = 0
+WindowStrokeshit1.Archivable = false
+WindowStrokeshit1.Enabled = true
+
+WindowStrokeshit2.Name = "WindowStroke"
+WindowStrokeshit2.Parent = DISCORD
+WindowStrokeshit2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+WindowStrokeshit2.Color = Color3.fromRGB(255, 255, 255)
+WindowStrokeshit2.LineJoinMode = Enum.LineJoinMode.Round
+WindowStrokeshit2.Thickness = 1
+WindowStrokeshit2.Transparency = 0
+WindowStrokeshit2.Archivable = false
+WindowStrokeshit2.Enabled = true
+
+WindowStrokeshit3.Name = "WindowStroke"
+WindowStrokeshit3.Parent = getkey
+WindowStrokeshit3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+WindowStrokeshit3.Color = Color3.fromRGB(255, 255, 255)
+WindowStrokeshit3.LineJoinMode = Enum.LineJoinMode.Round
+WindowStrokeshit3.Thickness = 1
+WindowStrokeshit3.Transparency = 0
+WindowStrokeshit3.Archivable = false
+WindowStrokeshit3.Enabled = true
+
+WindowStrokeshit4.Name = "WindowStroke"
+WindowStrokeshit4.Parent = SUBMIT
+WindowStrokeshit4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+WindowStrokeshit4.Color = Color3.fromRGB(255, 255, 255)
+WindowStrokeshit4.LineJoinMode = Enum.LineJoinMode.Round
+WindowStrokeshit4.Thickness = 1
+WindowStrokeshit4.Transparency = 0
+WindowStrokeshit4.Archivable = false
+WindowStrokeshit4.Enabled = true
+
+
+maincorner.Name = "maincorner"
+maincorner.Parent = Main1
+
+
+
+DISCORD.Name = "DISCORD"
+DISCORD.Parent = Main1
+DISCORD.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+DISCORD.Position = UDim2.new(0.13418974, 0, 0.6960128, 0)
+DISCORD.Size = UDim2.new(0, 140, 0, 40)
+DISCORD.Font = Enum.Font.SourceSans
+DISCORD.Text = "PC VERSION"
+DISCORD.TextColor3 = Color3.fromRGB(255, 255, 255)
+DISCORD.TextSize = 14.000
+DISCORD.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zenhubzen/bfsource/main/pcshit", true))()
+keysystem:Destroy()
+end)
+
+CORNERDISCORD.Name = "CORNER DISCORD"
+CORNERDISCORD.Parent = DISCORD
+
+NAME.Name = "NAME"
+NAME.Parent = Main1
+NAME.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NAME.BackgroundTransparency = 1.000
+NAME.Position = UDim2.new(0.111489578, 0, 0.00442506745, 0)
+NAME.Size = UDim2.new(0, 150, 0, 50)
+NAME.Font = Enum.Font.FredokaOne
+NAME.Text = "SELECT DEVICE"
+NAME.TextColor3 = Color3.fromRGB(255, 255, 255)
+NAME.TextSize = 14.000
+
+HUB.Name = "HUB"
+HUB.Parent = Main1
+HUB.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HUB.BackgroundTransparency = 1.000
+HUB.Position = UDim2.new(0.198232114, 0, 0.00442507118, 0)
+HUB.Size = UDim2.new(0, 191, 0, 50)
+HUB.Font = Enum.Font.FredokaOne
+HUB.Text = ""
+HUB.TextColor3 = Color3.fromRGB(255, 0, 0)
+HUB.TextSize = 16.000
+HUB.TextWrapped = true
+
+SUBMIT.Name = "SUBMIT"
+SUBMIT.Parent = Main1
+SUBMIT.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+SUBMIT.Position = UDim2.new(0.13418974, 0, 0.3360128, 0)
+SUBMIT.Size = UDim2.new(0, 140, 0, 40)
+SUBMIT.Font = Enum.Font.SourceSans
+SUBMIT.Text = "MOBILE VERSION"
+SUBMIT.TextColor3 = Color3.fromRGB(255, 255, 255)
+SUBMIT.TextSize = 14.000
+SUBMIT.TextWrapped = true
+SUBMIT.MouseButton1Click:Connect(function()
+Main1.Visible = false
+wait(1)
+Main1:Destroy()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zenhubzen/bfsource/main/kiggi", true))()
+end)
