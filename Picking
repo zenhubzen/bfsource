@@ -39,7 +39,7 @@ Main1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Main1.Position = UDim2.new(0.317497045, 0, 0.144578308, 0)
 Main1.Size = UDim2.new(0, 190, 0, 200)
 Main1.Active = true
-Main1.Visible = false
+Main1.Visible = true
 Main1.Draggable = true
 
 WindowStroke.Name = "WindowStroke"
@@ -164,3 +164,5 @@ wait(1)
 Main1:Destroy()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/zenhubzen/bfsource/main/kiggi", true))()
 end)
+
+UICorner.Parent = SUBMIT
