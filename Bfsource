@@ -8871,8 +8871,6 @@ Swords:Seperator("\\\\\  Auto Enma & Yama  //")
 		end
 	end)
 end
-
-    if World2 then
 	Swords:Seperator("\\\\\  True Triple Katana  //")
 
 	Swords:Toggle("Auto True Triple Katana",false,function(Value)
@@ -8917,9 +8915,8 @@ task.spawn(function()
                 end
             end)
         end
-    end)
-end
-
+end)
+  
 if World1 then
     Swords:Seperator("\\\\\  Pole V.1  //")
 
@@ -9573,7 +9570,6 @@ end
     end)
 end
 
-    if World2 then
     Swords:Seperator("\\\\\  Dark Coat //")
 
     local BlackBeardStatus = Swords:Label("Status : N/Q")
@@ -9633,8 +9629,6 @@ Swords:Toggle("Auto Dark Coat",_G.BlackBeard,function(value)
             end
         end
     end)
-end
-    if World2 then
     Swords:Seperator("\\\\\  Swan Glasses  //")
     
     local Don_Swan_Status = Swords:Label("Status : N/Q")
@@ -9700,7 +9694,6 @@ end
             end
         end)
     end)
-    end
     
 
     if World3 then
@@ -10097,9 +10090,6 @@ spawn(function()
             end
         end)
 	end
-
-
-    if World2 then
     Swords1:Seperator("\\\\\  Legendary Sword  //")
     
     Swords1:Toggle("Auto Legendary Sword",_G.AutoBuyLegendarySword,function(value)
@@ -15913,4 +15903,3 @@ Race2:Button("Auto Complete Angel Trial",function(t)
   Race2:Button("Teleport Pvp Zone (Must Be in Temple Of Time!)",function()
   TP(CFrame.new(28766.681640625, 14967.1455078125, -164.13290405273438))
   end)
-  end
