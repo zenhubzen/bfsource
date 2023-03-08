@@ -1,4 +1,3 @@
-
 _G.Settings = {
 	UI = {
 		Color = Color3.fromRGB(255, 255, 255),
@@ -7071,17 +7070,17 @@ task.spawn(function()
             while task.wait() do
                 pcall(function()
                     if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
-                        FM:Set("ðŸŒ‘ : Full Moon 100%")
+                        FM:Set("🌕: Full Moon 100%")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
-                        FM:Set("ðŸŒ’ : Full Moon 75%")
+                        FM:Set("🌖’ : Full Moon 75%")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
-                        FM:Set("ðŸŒ“ : Full Moon 50%")
+                        FM:Set("🌗“ : Full Moon 50%")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
-                        FM:Set("ðŸŒ— : Full Moon 25%")
+                        FM:Set("🌘 : Full Moon 25%")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
-                        FM:Set("ðŸŒ– : Full Moon 15%")
+                        FM:Set("🌘: Full Moon 15%")
                     else
-                        FM:Set("ðŸŒš : Full Moon 0%")
+                        FM:Set("🌑: Full Moon 0%")
                     end
                 end)
             end
@@ -7154,35 +7153,40 @@ end
 for i,v in pairs(game.Players:GetPlayers()) do
 	PlayersMin = i
 end
-
 if game:GetService("Lighting").Sky.MoonTextureId == Moon['1'] then
-	MoonIcon = 'ðŸŒ”'
+	MoonIcon = '🌔'
 elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['2'] then
-	MoonIcon = 'ðŸŒ“'
+	MoonIcon = '🌓'
 elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['3'] then
-	MoonIcon = 'ðŸŒ’'
+	MoonIcon = '🌒'
 elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['4'] then
-	MoonIcon = 'ðŸŒ‘'
+	MoonIcon = '🌑'
 elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['5'] then
-	MoonIcon = 'ðŸŒ˜'
+	MoonIcon = '🌘'
 elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['6'] then
-	MoonIcon = 'ðŸŒ—'
+	MoonIcon = '🌗'
 elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['7'] then
-	MoonIcon = 'ðŸŒ–'
+	MoonIcon = '🌖'
 elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['8'] then
-	MoonIcon = 'ðŸŒ•'
+	MoonIcon = '🌕'
 end
 if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
-	MirageMessage = '```Mirage is spawing : âœ”```'
+	MirageMessage = '```Mirage is spawing : ✔```'
 else
-	MirageMessage = '```Mirage isn\'t spawn : âŒ```'
+	MirageMessage = '```Mirage isn\'t spawn : ❌```'
+end
+
+if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
+	MirageMessage = '```Mirage is spawing : ✅”```'
+else
+	MirageMessage = '```Mirage isn\'t spawn : ❌```'
 end
 
 MoonMessage = '```'..tostring(MoonPercent..'%'..' : '..MoonIcon)..'```'
 JoinServer = 'game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,'..'\''..tostring(game.JobId)..'\''..')'
 print('\n'..MoonMessage..'\n'..MirageMessage..'\n'..JoinServer)
 
-local url = "https://discord.com/api/webhooks/1068016537472090123/D8Wl3RNWjkGmLmFsSRlqVPL3lY9HXzV_vCFTmusMnOHZTazkjnRafy8FB_freGwn9AK-" -- ur webhook url
+local url = "https://discord.com/api/webhooks/1083169808075477033/GmO1ReXiYVfBiS5YBh-44Rj-lfz3sNaQ84OA12-54Z5NdHtKnwhoUh2SWdWEcUkLZmxT" -- ur webhook url
 local data = {
 	["username"] = 'Zen Hub', -- Webhook name here
 	['content'] = '<@&1068889841091219498>', -- ping everyone if you want to ping role use this <@&1007291553074647132> 
@@ -7194,24 +7198,24 @@ local data = {
 			["type"] = "rich",
 			["fields"] =  {
 				{
-					["name"] = "[ðŸ‘¥] Players Active",
+					["name"] = "[👥] Players Active",
 					["value"] = '```'..tostring(PlayersMin)..'/12```'
 				},
 				{
-					["name"] = "[ðŸ“ƒ] JobID",
+					["name"] = "[🪪] JobID",
 					["value"] = '```'..tostring(game.JobId)..'```'
 				},
 				{
-					["name"] = "[ðŸ“] Join Server",
+					["name"] = "[🗺️] Join Server",
 					["value"] = '```'..JoinServer..'```',
 				},
 				{
-					["name"] = "[ðŸ•‘] Moon Check",
+					["name"] = "[🕜] Moon Check",
 					["value"] = MoonMessage,
 					["inline"] = true
 				},
 				{
-					["name"] = "[ðŸŒ²] Mirage Check",
+					["name"] = "[🏝️] Mirage Check",
 					["value"] = MirageMessage,
 					["inline"] = true
 				}
@@ -7347,7 +7351,6 @@ end)
 
 local CamShake = require(game.ReplicatedStorage.Util.CameraShaker)
 CamShake:Stop()
-
 AutoMisc3:Seperator("Others")
  
     AutoMisc3:Toggle("No Camera Shaker",false,function(value)
@@ -7549,76 +7552,6 @@ end)
 			end
 		end)
 		end)
-		
-
-	_G.URL = "https://discord.com/api/webhooks/1055160670078902403/QlWgRwFZ9vaNaJSES_3g7gPIQIblrdzb_a3b1JQlzekAEzeAMuDZ21WmIhWQus5rmUWl" 
-    AutoMisc3:Seperator("\\\\\  Webhook  //")
-
-	    AutoMisc3:Button("Webhook",function()
-local exploits = identifyexecutor()
-local text = "Level:"..game:GetService("Players").LocalPlayer.Data.Level.Value.."                                               Beli:"..game:GetService("Players").LocalPlayer.Data.Beli.Value.."                                               Fragments:"..game:GetService("Players").LocalPlayer.Data.Fragments.Value.."                                               Points:"..game:GetService("Players").LocalPlayer.Data.Points.Value.."                                               EXP:"..game:GetService("Players").LocalPlayer.Data.Exp.Value.."\nSpawnPoint:"..game:GetService("Players").LocalPlayer.Data.LastSpawnPoint.Value.."\n DevilFruit: "..game:GetService("Players").LocalPlayer.Data.DevilFruit.Value.."\n Bounty/Honor: "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value.."\n Points: "..game:GetService("Players").LocalPlayer.Data.Points.Value.."\n Race : "..game:GetService("Players").LocalPlayer.Data.Race.Value.."\n Game Name : "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-local url = _G.URL
-local data = {
-   ["content"] = "",
-   ["embeds"] = {
-       {
-           ["title"] = "New Information", 
-           ["description"] = "Username: " ..game.Players.LocalPlayer.Name.. " \n" ..text,
-           ["type"] = "rich",
-           ["color"] = tonumber(0x7269da),
-           ["image"] = {
-               ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
-                   tostring(game:GetService("Players").LocalPlayer.Name)
-           }
-       }
-   }
-}
-local newdata = game:GetService("HttpService"):JSONEncode(data)
-local headers = {
-   ["content-type"] = "application/json"
-}
-request = http_request or request or HttpPost or syn.request
-local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-request(abcdef)
-end)
-    AutoMisc3:Label("You Informations Every 60 Seconds")
-    AutoMisc3:Toggle("Send",true,function(value)
-        _G.SendWeb = value
-    end)
-
-	 spawn(function()
-        while wait(60) do
-            if _G.SendWeb then			
-local exploits = identifyexecutor()
-local text = "Level:"..game:GetService("Players").LocalPlayer.Data.Level.Value.."                                               Beli:"..game:GetService("Players").LocalPlayer.Data.Beli.Value.."                                               Fragments:"..game:GetService("Players").LocalPlayer.Data.Fragments.Value.."                                               Points:"..game:GetService("Players").LocalPlayer.Data.Points.Value.."                                               EXP:"..game:GetService("Players").LocalPlayer.Data.Exp.Value.."\nSpawnPoint:"..game:GetService("Players").LocalPlayer.Data.LastSpawnPoint.Value.."\n DevilFruit: "..game:GetService("Players").LocalPlayer.Data.DevilFruit.Value.."\n Bounty/Honor: "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value.."\n Points: "..game:GetService("Players").LocalPlayer.Data.Points.Value.."\n Race : "..game:GetService("Players").LocalPlayer.Data.Race.Value.."\n Game Name : "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-local url = _G.URL
-  
-  local data = {
-   ["content"] = "",
-   ["embeds"] = {
-       {
-           ["title"] = "New Information", 
-           ["description"] = "Username: " ..game.Players.LocalPlayer.DisplayName.. "                                               " ..text,
-           ["type"] = "rich",
-           ["color"] = tonumber(0x7269da),
-           ["image"] = {
-               ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
-                   tostring(game:GetService("Players").LocalPlayer.Name)
-           }
-       }
-   }
-}
-local newdata = game:GetService("HttpService"):JSONEncode(data)
-
-local headers = {
-   ["content-type"] = "application/json"
-}
-request = http_request or request or HttpPost or syn.request
-local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-request(abcdef)
-       end
-	end
-end)
 
   if World3 then
 
@@ -14351,6 +14284,28 @@ spawn(function()
 					end
 				end
 end
+end)
+
+Shop:Seperator("\\\\\  Valentines Shop  //")
+
+--// Valentine Shop
+Shop:Button("2X Exp 15min [x25 Hearts]", "", function()
+    game:GetService("ReplicatedStorage").Remotes.Celebration:InvokeServer("Purchase", "15minDouble")
+end)
+Shop:Button("2X Exp 30min [x50 Hearts]", "", function()
+    game:GetService("ReplicatedStorage").Remotes.Celebration:InvokeServer("Purchase", "30minDouble")
+end)
+Shop:Button("Race Reroll [x50 Hearts]", "", function()
+    game:GetService("ReplicatedStorage").Remotes.Celebration:InvokeServer("Purchase", "RaceReroll")
+end)
+Shop:Button("Kilo Fruit [x60 Hearts]", "", function()
+    game:GetService("ReplicatedStorage").Remotes.Celebration:InvokeServer("Purchase", "Kilo-Kilo")
+end)
+Shop:Button("Smoke Fruit [x155 Hearts]","", function()
+    game:GetService("ReplicatedStorage").Remotes.Celebration:InvokeServer("Purchase", "Smoke-Smoke")
+end)
+Shop:Button("Buddha Fruit [x700 Hearts]", "", function()
+    game:GetService("ReplicatedStorage").Remotes.Celebration:InvokeServer("Purchase", "Buddha-Buddha")
 end)
     
 
