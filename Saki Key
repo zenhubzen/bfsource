@@ -1,2 +1,2 @@
-local key = "UPDATE18"
+local key = "NOKEY"
 return key
