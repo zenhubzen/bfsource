@@ -1,2 +1,2 @@
-local key = "EZCRACK"
+local key = "123456789"
 return key
