@@ -1,2 +1,2 @@
-local key = "123456789"
+local key = "QWERTY"
 return key
