@@ -1,2 +1,2 @@
-local key = "PROMAX"
+local key = "TRANSCRIPT"
 return key
